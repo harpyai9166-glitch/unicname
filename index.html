@@ -1,112 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Gmail Login Clone</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foodie Hub</title>
 
-    .container {
-      background: white;
-      width: 350px;
-      padding: 40px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-      border-radius: 8px;
-      text-align: center;
-    }
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, sans-serif;}
 
-    .logo {
-      font-size: 24px;
-      color: #d93025;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
+body{background:#fff;color:#333;}
 
-    h2 {
-      margin: 0;
-      font-weight: normal;
-    }
+header{
+  background:#ff4d4d;
+  padding:15px 50px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  color:#fff;
+}
 
-    p {
-      font-size: 14px;
-      color: #555;
-    }
+header h1{font-size:24px;}
 
-    input {
-      width: 100%;
-      padding: 12px;
-      margin-top: 20px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-size: 16px;
-    }
+nav a{
+  color:#fff;
+  margin-left:20px;
+  text-decoration:none;
+  font-weight:bold;
+}
 
-    input:focus {
-      border-color: #1a73e8;
-      outline: none;
-    }
+.hero{
+  height:80vh;
+  background:url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092') no-repeat center/cover;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  text-align:center;
+}
 
-    .link {
-      text-align: left;
-      margin-top: 10px;
-      font-size: 13px;
-      color: #1a73e8;
-      cursor: pointer;
-    }
+.hero h2{font-size:50px;background:rgba(0,0,0,0.5);padding:20px;border-radius:10px;}
 
-    .actions {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 30px;
-    }
+.section{
+  padding:50px;
+  text-align:center;
+}
 
-    .create {
-      color: #1a73e8;
-      font-size: 14px;
-      cursor: pointer;
-    }
+.cards{
+  display:flex;
+  gap:20px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top:30px;
+}
 
-    button {
-      background-color: #1a73e8;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 14px;
-    }
+.card{
+  width:300px;
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
 
-    button:hover {
-      background-color: #1669c1;
-    }
+.card:hover{transform:translateY(-10px);}
 
-  </style>
+.card img{width:100%;height:200px;object-fit:cover;}
+
+.card h3{padding:15px;}
+
+footer{
+  background:#333;
+  color:#fff;
+  text-align:center;
+  padding:20px;
+  margin-top:40px;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:15px;
+  padding:10px 20px;
+  background:#ff4d4d;
+  color:#fff;
+  text-decoration:none;
+  border-radius:5px;
+}
+
+</style>
 </head>
+
 <body>
 
-  <div class="container">
-    <div class="logo">Gmail</div>
-    <h2>Sign in</h2>
-    <p>Use your Google Account</p>
+<header>
+  <h1>Foodie Hub</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#menu">Menu</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-    <input type="text" placeholder="Email or phone">
+<section class="hero">
+  <h2>Delicious Food Delivered To You</h2>
+</section>
 
-    <div class="link">Forgot email?</div>
+<section class="section" id="menu">
+  <h2>Our Menu</h2>
+  <div class="cards">
 
-    <div class="actions">
-      <div class="create">Create account</div>
-      <button>Next</button>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd">
+      <h3>Burger</h3>
     </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c">
+      <h3>Salad</h3>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1601924638867-3ec3d5f8a0b5">
+      <h3>Pizza</h3>
+    </div>
+
   </div>
+</section>
+
+<section class="section" id="about">
+  <h2>About Us</h2>
+  <p>We provide fresh and tasty food with fast delivery at your doorstep.</p>
+</section>
+
+<section class="section" id="contact">
+  <h2>Contact Us</h2>
+  <p>Email: food@foodiehub.com</p>
+  <a href="#" class="btn">Order Now</a>
+</section>
+
+<footer>
+  <p>© 2026 Foodie Hub | All Rights Reserved</p>
+</footer>
 
 </body>
 </html>
