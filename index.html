@@ -1,63 +1,234 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Website</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Block — Build your next project even faster</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #ffffff;
+    color: #0f172a;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  .hero {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 80px 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    min-height: 100vh;
+  }
+  .left, .right {
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+  }
+  .badge {
+    display: inline-block;
+    padding: 8px 18px;
+    border: 1.5px solid #c4b5fd;
+    border-radius: 999px;
+    color: #7c3aed;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 28px;
+  }
+  h1 {
+    font-size: 64px;
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    color: #0f172a;
+  }
+  .desc {
+    font-size: 17px;
+    line-height: 1.6;
+    color: #64748b;
+    margin-bottom: 36px;
+    max-width: 480px;
+  }
+  .buttons { display: flex; gap: 14px; }
+  .btn {
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .btn-primary {
+    background: #7c3aed;
+    color: #fff;
+  }
+  .btn-primary:hover { background: #6d28d9; transform: translateY(-2px); box-shadow: 0 10px 25px -5px rgba(124,58,237,0.4); }
+  .btn-secondary {
+    background: #fff;
+    color: #0f172a;
+    border: 1.5px solid #e2e8f0;
+  }
+  .btn-secondary:hover { border-color: #0f172a; }
+
+  /* Right side dashboard mockup */
+  .dashboard {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 25px 60px -15px rgba(15,23,42,0.18);
+    padding: 24px;
+    position: relative;
+  }
+  .dashboard-inner { display: flex; gap: 18px; }
+  .sidebar {
+    width: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    padding-top: 6px;
+  }
+  .logo {
+    width: 32px; height: 32px; border-radius: 8px;
+    background: #7c3aed;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-weight: 700;
+  }
+  .icon {
+    width: 28px; height: 28px; border-radius: 6px;
+    background: #f1f5f9;
+  }
+  .icon.active { background: #ede9fe; }
+  .main { flex: 1; }
+  .main h2 { font-size: 20px; margin-bottom: 18px; }
+  .cards { display: grid; grid-template-columns: 1.3fr 1fr; gap: 14px; }
+  .card {
+    background: #f8fafc;
+    border-radius: 14px;
+    padding: 18px;
+  }
+  .card-label { font-size: 11px; color: #94a3b8; letter-spacing: 0.08em; font-weight: 600; }
+  .donut {
+    margin: 14px auto;
+    width: 130px; height: 130px; border-radius: 50%;
+    background: conic-gradient(#7c3aed 0% 75%, #e2e8f0 75% 100%);
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .donut::before {
+    content: ''; width: 90px; height: 90px; border-radius: 50%; background: #fff;
+    position: absolute;
+  }
+  .donut span { position: relative; font-weight: 700; font-size: 18px; text-align: center; line-height: 1.2; }
+  .stat-num { font-size: 32px; font-weight: 700; margin-top: 6px; }
+  .pill {
+    display: inline-block; font-size: 11px; padding: 3px 8px;
+    border-radius: 6px; background: #fef3c7; color: #92400e; margin-top: 8px;
+  }
+  .pill.blue { background: #cffafe; color: #155e75; }
+  .sparkline { height: 32px; margin-top: 8px; }
+  .legend { display: flex; gap: 14px; justify-content: center; font-size: 11px; color: #64748b; margin-top: 6px; }
+  .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #7c3aed; margin-right: 4px; }
+  .dot.gray { background: #cbd5e1; }
+
+  /* floating tags */
+  .tag {
+    position: absolute;
+    padding: 6px 14px;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  }
+  .tag-user { background: #7c3aed; top: -14px; right: 20px; }
+  .tag-dev { background: #06b6d4; top: 38%; left: -38px; }
+  .tag-mgr { background: #10b981; bottom: 26%; left: -42px; }
+
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; padding: 60px 24px; }
+    h1 { font-size: 44px; }
+  }
+</style>
 </head>
-
 <body>
+  <section class="hero">
+    <div class="left" id="left">
+      <span class="badge">New: Our Live collaborative just landed</span>
+      <h1>Build your next<br/>project even<br/>faster.</h1>
+      <p class="desc">Block makes it easy to get your most important work done. Increase efficiency to deliver result &amp; hit your goal on every project.</p>
+      <div class="buttons">
+        <button class="btn btn-primary">Try for Free</button>
+        <button class="btn btn-secondary">Book a Demo</button>
+      </div>
+    </div>
 
-  <div id="header"></div>
-  <div id="slider"></div>
-  <div id="Features"></div>
-  <div id="services"></div>
-   <div id="tesimonils"></div>
-   <div id="integrations"></div>
+    <div class="right" id="right">
+      <div class="dashboard">
+        <span class="tag tag-user">User</span>
+        <span class="tag tag-dev">Developer</span>
+        <span class="tag tag-mgr">Manager</span>
+        <div class="dashboard-inner">
+          <div class="sidebar">
+            <div class="logo">b</div>
+            <div class="icon active"></div>
+            <div class="icon"></div>
+            <div class="icon"></div>
+            <div class="icon"></div>
+          </div>
+          <div class="main">
+            <h2>Task Dashboard</h2>
+            <div class="cards">
+              <div class="card">
+                <div class="card-label">Total Task</div>
+                <div class="donut"><span>118<br/>Task</span></div>
+                <div class="legend"><span><span class="dot"></span>Pending</span><span><span class="dot gray"></span>Completed</span></div>
+              </div>
+              <div style="display:flex; flex-direction:column; gap:14px;">
+                <div class="card">
+                  <div class="card-label">COMPLETED TASK</div>
+                  <div class="stat-num">100</div>
+                  <span class="pill">48.3% Last 7 days</span>
+                </div>
+                <div class="card">
+                  <div class="card-label">TOTAL TASK</div>
+                  <div class="stat-num">118</div>
+                  <span class="pill blue">4.3% Last 7 days</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <script>
-    fetch("./kushal.html")
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById("header").innerHTML = data;
-      });
-  </script>
-  <script>
-    fetch("./silder.html")
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById("slider").innerHTML = data;
-      });
-  </script>
-   <script>
-    fetch("./Features.html")
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById("Features").innerHTML = data;
-      });
-  </script>
+<script>
+  const left = document.getElementById('left');
+  const right = document.getElementById('right');
 
-      <script>
-    fetch("./services.html")
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById("services").innerHTML = data;
-      });
-  </script>
-          <script>
-    fetch("./testimonils.html")
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById("tesimonils").innerHTML = data;
-      });
-  </script>
+  function attachParallax(el, strength) {
+    el.addEventListener('mousemove', (e) => {
+      const rect = el.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      // Move BOTH elements based on hover of either — up/down primarily
+      const ty = y * strength;
+      const tx = x * strength * 0.4;
+      left.style.transform  = `translate3d(${-tx}px, ${-ty}px, 0)`;
+      right.style.transform = `translate3d(${tx}px, ${ty}px, 0)`;
+    });
+    el.addEventListener('mouseleave', () => {
+      left.style.transform = 'translate3d(0,0,0)';
+      right.style.transform = 'translate3d(0,0,0)';
+    });
+  }
 
-              <script>
-    fetch("./integrations.html")
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById("integrations").innerHTML = data;
-      });
-  </script>
+  attachParallax(left, 24);
+  attachParallax(right, 24);
+</script>
 </body>
 </html>
