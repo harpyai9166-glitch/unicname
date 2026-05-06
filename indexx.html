@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"on-secondary": "#ffffff", "on-tertiary-fixed": "#25005a", "on-primary": "#ffffff", tertiary: "#722ee5", secondary: "#a23957", "tertiary-fixed": "#eaddff", "primary-fixed": "#ffdad8", "surface-variant": "#ffd9df", "on-surface": "#350e19", "surface-container-highest": "#ffd9df", "on-error": "#ffffff", "on-secondary-fixed": "#3f0017", "secondary-fixed-dim": "#ffb1c1", "on-tertiary": "#ffffff", error: "#ba1a1a", "on-secondary-fixed-variant": "#832140", "on-primary-fixed": "#410007", "surface-bright": "#fff8f7", "primary-fixed-dim": "#ffb3b1", "error-container": "#ffdad6", surface: "#fff8f7", "surface-container-low": "#fff0f1", "outline-variant": "#e1bebd", outline: "#8d706f", background: "#fff8f7", "inverse-on-surface": "#ffecee", "secondary-container": "#fe81a0", "inverse-primary": "#ffb3b1", "secondary-fixed": "#ffd9df", "on-error-container": "#93000a", "tertiary-container": "#8c4fff", "tertiary-fixed-dim": "#d2bcff", "on-tertiary-container": "#08001f", "on-primary-container": "#fffbff", "on-secondary-container": "#761637", "surface-container-high": "#ffe1e5", "surface-container-lowest": "#ffffff", "on-primary-fixed-variant": "#91051e", "on-background": "#350e19", "primary-container": "#d23d46", "surface-tint": "#b32632", "surface-dim": "#ffcdd6", "on-tertiary-fixed-variant": "#5900c7", "on-surface-variant": "#594040", primary: "#b02330", "inverse-surface": "#4e222d", "surface-container": "#ffe9eb", "secondary-dim": "#8f2a48", "error-dim": "#b92902", "primary-dim": "#9e1425", "tertiary-dim": "#65379d"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {md: "16px", "margin-mobile": "16px", xl: "32px", gutter: "16px", sm: "8px", lg: "24px", unit: "4px", xs: "4px"}, fontFamily: {"display-lg": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "label-bold": ["Plus Jakarta Sans"], "title-sm": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"]}, fontSize: {"display-lg": ["32px", {lineHeight: "1.2", fontWeight: "800"}], "body-md": ["14px", {lineHeight: "1.5", fontWeight: "400"}], "body-sm": ["13px", {lineHeight: "1.4", fontWeight: "400"}], "headline-md": ["20px", {lineHeight: "1.3", fontWeight: "700"}], "label-bold": ["12px", {lineHeight: "1.0", letterSpacing: "0.02em", fontWeight: "700"}], "title-sm": ["16px", {lineHeight: "1.4", fontWeight: "600"}], "label-md": ["11px", {lineHeight: "1.0", fontWeight: "500"}]}}}};</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-pill {
+            background-color: #ffdad8;
+            color: #b7122a;
+            border: 1px solid #ffb3b1;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body-md text-on-surface antialiased">
+<!-- Top App Bar -->
+<header class="flex justify-between items-center w-full px-margin-mobile h-16 sticky top-0 z-50 bg-surface shadow-[0_4px_12px_rgba(0,0,0,0.05)]">
+<div class="flex items-center gap-3">
+<button class="active:scale-98 transition-transform duration-150">
+<span class="material-symbols-outlined text-primary" data-icon="arrow_back">arrow_back</span>
+</button>
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-primary truncate max-w-[200px]">QuickBite Delivery</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-secondary" data-icon="location_on">location_on</span>
+<span class="font-label-md text-label-md text-secondary">Manhattan, NY</span>
+</div>
+</div>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-fixed">
+<img alt="User profile photo" data-alt="A professional headshot of a young urban professional with a friendly expression. The lighting is soft and warm, characteristic of a high-end lifestyle app. The background is a clean, neutral gradient that complements the modern minimalism of the UI. The overall aesthetic is polished and energetic, reflecting a premium user experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBf_wDAgFLiHff08IPsPRZBDYxswhfXIia5fC4S39wDhySa-DTSgVf7eMd5ztshsIRRc_tQbU7mLtAb9fojRMIP4_TglG6WwVH21xwsJJ4XHmB0jkSL7iq1Cs4pdiLfZLV_Zvj0FcgD3CkO-T6eXe0ekXQz4W4tLiPeT-Vi_t13oR90Yu1TogEP3EUdN4KX0PNYyExQNT9sV-xrYmtvz0A4BWcwbPdivGX1JJcJhyYFoxObMa92o2LedlJeAYNpqaAUwpq2gbCMPC3o"/>
+</div>
+</header>
+<main class="pb-32">
+<!-- Restaurant Header -->
+<section class="relative">
+<div class="h-56 w-full relative">
+<img alt="Restaurant Banner" class="w-full h-full object-cover" data-alt="A vibrant and appetizing overhead shot of a gourmet spread featuring artisan pizza, fresh salads, and glistening pasta dishes on a rustic dark wood table. The lighting is dramatic and warm, highlighting the textures of the food. The color palette is rich with deep reds and fresh greens, maintaining high-energy appetite appeal. This high-quality photography serves as the primary visual driver for the menu screen." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4XTlGgPwLBZjEVyjYBkZ_wVzSm7HMRTcPW1HPBoySFUJ0DtqJW8MAdde0l1hK76ojYKf0__5IW-ZYBVWo8U_SuOh4WcnJXFu5zHn60uuQk4lcGCTG2I4_EABSdP4ymWfV7XUfTDmwSLFpa_ntu7KICtg61Vo5qa9t59jst9EpZ1V-KbZIXwjV5bTqMJBoq7ukmhGe3p0pQlN7oarWHG7lq5xGrlYVMI2IUkLNWeDSfLicxd3zR9HcxYIoRsMNtpT0hpAYbqvwmsAa"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-4 left-margin-mobile flex items-center gap-2">
+<div class="bg-tertiary-container text-on-tertiary-container px-2 py-1 rounded-lg flex items-center gap-1 shadow-lg">
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-bold text-label-bold">4.8 (500+)</span>
+</div>
+<div class="bg-surface/90 backdrop-blur-md text-on-surface px-2 py-1 rounded-lg flex items-center gap-1 shadow-lg">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span>
+<span class="font-label-bold text-label-bold">25-30 min</span>
+</div>
+</div>
+</div>
+<div class="px-margin-mobile -mt-6 relative z-10">
+<div class="bg-surface rounded-xl p-4 shadow-[0_4px_12px_rgba(0,0,0,0.05)] border border-outline-variant">
+<h1 class="font-display-lg text-display-lg text-primary">The Artisan Kitchen</h1>
+<p class="text-secondary font-body-md mt-1">Italian • Wood-fired Pizzas • Fresh Pasta</p>
+<div class="flex items-center gap-4 mt-3 pt-3 border-t border-surface-variant">
+<div class="flex items-center gap-1 text-on-tertiary-fixed-variant">
+<span class="material-symbols-outlined text-sm" data-icon="eco">eco</span>
+<span class="font-label-md text-label-md">Pure Veg Options Available</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Search & Filters -->
+<section class="mt-xl px-margin-mobile sticky top-16 z-40 bg-surface py-2">
+<div class="flex items-center gap-2 mb-4">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary" data-icon="search">search</span>
+<input class="w-full pl-10 pr-4 py-3 bg-surface-container-low border border-outline-variant rounded-xl focus:ring-1 focus:ring-primary focus:outline-none transition-all font-body-md" placeholder="Search in menu..." type="text"/>
+</div>
+<button class="p-3 bg-surface-container-low border border-outline-variant rounded-xl active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-secondary" data-icon="tune">tune</span>
+</button>
+</div>
+<div class="flex gap-2 overflow-x-auto no-scrollbar pb-2">
+<button class="flex items-center gap-1 px-4 py-2 rounded-full border border-outline text-secondary font-label-bold whitespace-nowrap active-pill">
+<span class="material-symbols-outlined text-sm" data-icon="recommend" style="font-variation-settings: 'FILL' 1;">recommend</span>
+                    Recommended
+                </button>
+<button class="flex items-center gap-1 px-4 py-2 rounded-full border border-outline text-secondary font-label-bold whitespace-nowrap hover:bg-surface-container-high transition-colors">
+<div class="w-3 h-3 border border-tertiary flex items-center justify-center p-[2px]"><div class="w-full h-full bg-tertiary rounded-full"></div></div>
+                    Veg Only
+                </button>
+<button class="flex items-center gap-1 px-4 py-2 rounded-full border border-outline text-secondary font-label-bold whitespace-nowrap hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="local_fire_department">local_fire_department</span>
+                    Best Sellers
+                </button>
+<button class="flex items-center gap-1 px-4 py-2 rounded-full border border-outline text-secondary font-label-bold whitespace-nowrap hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="restaurant">restaurant</span>
+                    Main Course
+                </button>
+</div>
+</section>
+<!-- Categories and Items -->
+<section class="mt-lg">
+<!-- Recommended Section -->
+<div class="px-margin-mobile mb-xl">
+<h2 class="font-headline-md text-headline-md mb-4 flex items-center gap-2">
+                    Recommended
+                    <span class="h-px flex-1 bg-surface-variant"></span>
+</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Item Card 1 -->
+<div class="bg-surface rounded-xl border border-outline-variant p-4 flex gap-4 shadow-[0_4px_12px_rgba(0,0,0,0.05)] hover:shadow-lg transition-shadow">
+<div class="flex-1">
+<div class="w-4 h-4 border border-tertiary flex items-center justify-center p-[2px] mb-2">
+<div class="w-full h-full bg-tertiary rounded-full"></div>
+</div>
+<h3 class="font-title-sm text-title-sm text-on-surface">Truffle Mushroom Risotto</h3>
+<p class="font-label-bold text-label-bold text-primary mt-1">$18.50</p>
+<p class="font-body-sm text-body-sm text-secondary mt-2 line-clamp-2">Creamy arborio rice slow-cooked with wild forest mushrooms and topped with black truffle oil.</p>
+</div>
+<div class="relative w-28 h-28 flex-shrink-0">
+<img alt="Truffle Risotto" class="w-full h-full object-cover rounded-xl" data-alt="A close-up, high-detail shot of a creamy truffle mushroom risotto served in a shallow dark ceramic bowl. The dish is garnished with fresh herbs and a drizzle of aromatic oil. Soft, side lighting highlights the rich texture of the rice and the earthy tones of the mushrooms. The overall mood is sophisticated and comforting, fitting the premium aesthetic of the restaurant's menu." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeMBkfktom7b9RAegHrQTzCR-OD9xcA7yKe8EW7mawrIWqfjebD0oNjV6Aa6bqyWBQHr5ZywW3qdez9zKr6e9E8mKCpQiEAgFPS61eIgDVb8576NzqrUtGBuvI5vwh1GqsnvtIcLKZjJbr8wH9LM7fYgEhbK6YQzQiBwfTGMvFRxhfH2yZNo19BZMhqsKgRktUbFqlZHiar5Ma-t-6sITyU0QWHRi8rsrKja_FebmtzV_AL872iNjtyjnXAdB1H3cbflqGz1i2Fx1B"/>
+<button class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-surface border border-primary text-primary font-label-bold px-6 py-1.5 rounded-lg shadow-md hover:bg-primary-fixed active:scale-95 transition-all">
+                                ADD
+                            </button>
+</div>
+</div>
+<!-- Item Card 2 -->
+<div class="bg-surface rounded-xl border border-outline-variant p-4 flex gap-4 shadow-[0_4px_12px_rgba(0,0,0,0.05)] hover:shadow-lg transition-shadow">
+<div class="flex-1">
+<div class="w-4 h-4 border border-error flex items-center justify-center p-[2px] mb-2">
+<div class="w-full h-full bg-error rounded-full"></div>
+</div>
+<h3 class="font-title-sm text-title-sm text-on-surface">Spicy Calabrese Pizza</h3>
+<p class="font-label-bold text-label-bold text-primary mt-1">$22.00</p>
+<p class="font-body-sm text-body-sm text-secondary mt-2 line-clamp-2">Hand-stretched dough with spicy salami, chili flakes, honey drizzle, and fresh mozzarella.</p>
+</div>
+<div class="relative w-28 h-28 flex-shrink-0">
+<img alt="Spicy Pizza" class="w-full h-full object-cover rounded-xl" data-alt="A mouth-watering close-up of a wood-fired pepperoni pizza with visible chili flakes and a golden-brown charred crust. The lighting is bright and clear, making the spicy salami and melting cheese pop with color. The image exudes heat and flavor, perfectly capturing the high-energy appetite appeal central to the brand's identity. The background is a clean, minimalist kitchen setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9AvBsYEoJGqKMgyfYwI2CZaQu2E8tt7FWkyHRakBU66yG3Xg7fLm8r3QP3INP_kJUS2A8FKA57Ara0T9cfyZfTd-qPDRpPIUCN5uGKL8040tVESF-ZBRtm_kMpbOfeRymSk2y8vy2qVzN5wZretTeChHwzVmDDiGMCwB7ITTpRys4GpbQSZLiOwi3aqSoAOulo_SoOyCDGorx8s6QpGtD3lhwgcwxo3bNg_E9cZZKwP3GjuT1VOSX71iAo2P2Dua-HoQrbPDV-1Zm"/>
+<button class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-surface border border-primary text-primary font-label-bold px-6 py-1.5 rounded-lg shadow-md hover:bg-primary-fixed active:scale-95 transition-all">
+                                ADD
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Course Section -->
+<div class="px-margin-mobile">
+<h2 class="font-headline-md text-headline-md mb-4 flex items-center gap-2">
+                    Main Course
+                    <span class="h-px flex-1 bg-surface-variant"></span>
+</h2>
+<div class="space-y-4">
+<!-- Item Card 3 (Bento Style/Larger) -->
+<div class="bg-surface rounded-xl border border-outline-variant overflow-hidden shadow-[0_4px_12px_rgba(0,0,0,0.05)]">
+<div class="h-48 w-full">
+<img alt="Pasta Dish" class="w-full h-full object-cover" data-alt="An artistic, overhead photograph of a classic fettuccine carbonara plate. The creamy sauce, crispy pancetta, and freshly cracked black pepper are captured in sharp detail. The lighting is soft and natural, emphasizing the silky texture of the pasta. The plate sits on a minimalist, light grey surface that aligns with the app's modern light-mode aesthetic. The mood is authentic and premium." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC19DePRnQvvdFLkMt1orjcFD94kK3Gp7WT6FngPJjTdiveJgJpLqZ6s5Lt3vUZwFJ5i4xRBPZYHkuvAn0hJUD5p2-rO5tZL3qFfDfriNMj8W30n6_Q1rYUu3nX8fwa0w9A8Yd4HnPhCm8ylWKZcCZcYfLSccXE0Bz5O5gUsFe-CfdI45AjAfv8u-8Dv4UcLeIkAhl3I2W6Tt4ncGuzi5vR1Zvw9Vi46h_Yao_UX_makjGqICqsG5yzKv42BaabYjPKrHlrpU5LmPDy"/>
+</div>
+<div class="p-4 flex justify-between items-start">
+<div>
+<div class="w-4 h-4 border border-error flex items-center justify-center p-[2px] mb-2">
+<div class="w-full h-full bg-error rounded-full"></div>
+</div>
+<h3 class="font-title-sm text-title-sm text-on-surface">Signature Carbonara</h3>
+<p class="font-body-sm text-body-sm text-secondary mt-1">Guanciale, pecorino romano, egg yolk, black pepper.</p>
+<div class="flex items-center gap-2 mt-2">
+<span class="font-label-bold text-label-bold text-primary">$19.00</span>
+<span class="font-label-md text-label-md text-secondary bg-surface-container px-2 py-0.5 rounded">Best Seller</span>
+</div>
+</div>
+<button class="bg-primary text-on-primary font-label-bold px-8 py-2 rounded-xl shadow-lg active:scale-95 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+                                ADD
+                            </button>
+</div>
+</div>
+<!-- Item Card 4 -->
+<div class="bg-surface rounded-xl border border-outline-variant p-4 flex gap-4 shadow-[0_4px_12px_rgba(0,0,0,0.05)]">
+<div class="flex-1">
+<div class="w-4 h-4 border border-tertiary flex items-center justify-center p-[2px] mb-2">
+<div class="w-full h-full bg-tertiary rounded-full"></div>
+</div>
+<h3 class="font-title-sm text-title-sm text-on-surface">Pesto Genovese</h3>
+<p class="font-label-bold text-label-bold text-primary mt-1">$17.50</p>
+<p class="font-body-sm text-body-sm text-secondary mt-2 line-clamp-2">Fresh basil pesto, toasted pine nuts, parmesan shards over penne.</p>
+</div>
+<div class="relative w-28 h-28 flex-shrink-0">
+<img alt="Pesto Pasta" class="w-full h-full object-cover rounded-xl" data-alt="A close-up shot of vibrant green pesto pasta topped with glistening toasted pine nuts and thin shavings of parmesan cheese. The lighting is bright and cheerful, highlighting the fresh herb color. The aesthetic is clean and modern, emphasizing the freshness of the ingredients. The composition is tight and focused, designed to stimulate the appetite within a premium UI layout." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBupDOO99IVhkbuzNBzp9qHjzkS8yD1zpEeROF7e0no6rkbYc4HIx-nThZM24xB1wFWX9Gces4-JM3NlXqGVeHsKHPipO_kP9v8Io0JuwW6KgkkiIH6u6YTz2wffSbdBem-CCP9Tjniuwq3PiYOitJ6XFr7GQWgITOT75MnuvJ3dAzU7SylN_QX4O5ChC950cJS34F5abQ7HNG4BhbgynENtTJ6pEn1ZMIehZyvJ8i4bqv5F9EfzPrMDviVM0ScqnscdTzIdwBYC1Bs"/>
+<button class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-surface border border-primary text-primary font-label-bold px-6 py-1.5 rounded-lg shadow-md hover:bg-primary-fixed active:scale-95 transition-all">
+                                ADD
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating Action Bar (Cart Footer) -->
+<div class="fixed bottom-0 left-0 w-full px-margin-mobile pb-8 pt-4 z-50 pointer-events-none">
+<div class="max-w-md mx-auto pointer-events-auto">
+<div class="bg-primary-container text-on-primary-container px-4 py-3 rounded-2xl flex justify-between items-center shadow-[0_8px_20px_rgba(183,18,42,0.2)]">
+<div class="flex items-center gap-3">
+<div class="bg-on-primary-container text-primary-container w-8 h-8 rounded-lg flex items-center justify-center font-label-bold">
+                        2
+                    </div>
+<div>
+<p class="font-label-bold text-label-bold">2 Items Added</p>
+<p class="font-title-sm text-title-sm">$40.50 plus taxes</p>
+</div>
+</div>
+<button class="flex items-center gap-2 bg-on-primary-container text-primary-container px-6 py-2 rounded-xl font-label-bold active:scale-95 transition-all">
+                    VIEW CART
+                    <span class="material-symbols-outlined text-sm" data-icon="shopping_bag">shopping_bag</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-2 py-3 pb-safe bg-surface border-t border-outline-variant shadow-[0_-4px_12px_rgba(0,0,0,0.05)] md:hidden">
+<div class="flex flex-col items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-primary bg-primary-fixed rounded-full px-4 py-1">
+<span class="material-symbols-outlined" data-icon="search" style="font-variation-settings: 'FILL' 1;">search</span>
+<span class="font-label-md text-label-md">Search</span>
+</div>
+<div class="flex flex-col items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-label-md text-label-md">Orders</span>
+</div>
+<div class="flex flex-col items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-label-md text-label-md">Cart</span>
+</div>
+<div class="flex flex-col items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</div>
+</nav>
+</body></html>
